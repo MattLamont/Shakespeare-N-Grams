@@ -1,0 +1,47 @@
+==========================================================================
+Changelog
+==========================================================================
+
+
+
+
+
+==========================================================================
+4/21/2014 by Eric:
+--------------------------------------------------------------------------
+Note:
+unique n-gram count is off (ex 2-gram:  ours:278,009 vs prof:96,636)
+	our 1-grams is perfect with the prof's in both unique count and words
+
+Why does exportTwoGrams() run twice?
+--------------------------------------------------------------------------
+no more duplicate entries
+	fixed insertGram()
+		removed white-spaces right before inserting element
+		simplified insert function
+			increment value inside of using itrs
+
+removed uesless "function.h" header
+
+complier complains about temp_array scope
+	fixed by moving it into parseData()
+
+removed outfile("parsed_shakespeare_new.txt")
+	program doesn't do anything with this
+==========================================================================
+
+
+
+
+==========================================================================
+4/21/2014 by Matt:
+--------------------------------------------------------------------------
+1. Added array filled with punctuation to be ignored in the file
+2. Added function that uses the punctuation array to remove punctuation
+   from the file as it is being parsed
+3. Common words are no longer removed from the file as it is being parsed.
+4. Instead, every calculated n-gram is searched for common words. If there
+   are common words in the gram, then the whole gram is ignored. Otherwise,
+   the gram is stored as normal. 
+5. Removed unused remove punctuation function.
+==========================================================================
